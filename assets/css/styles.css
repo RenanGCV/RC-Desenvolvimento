@@ -49,6 +49,7 @@
 /* ===== ESTILOS GLOBAIS ===== */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -57,16 +58,22 @@ body {
     color: var(--light-text);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 section {
     padding: var(--spacing-xl) 0;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ===== TIPOGRAFIA ===== */
@@ -720,6 +727,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== PLANOS ===== */
 .planos {
     background: var(--dark-bg);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .planos .container {
@@ -731,6 +740,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: var(--spacing-lg);
+    width: 100%;
 }
 
 .info-card {
@@ -741,11 +751,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 1rem;
     border: 1px solid rgba(99, 102, 241, 0.1);
+    width: 100%;
 }
 
 .info-card i {
     font-size: 2rem;
     color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .plans-grid {
@@ -754,6 +771,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .plan-card {
@@ -766,6 +784,8 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 0;
 }
 
 .plan-card::before {
@@ -811,6 +831,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     transform: rotate(45deg);
     box-shadow: var(--shadow-md);
+    z-index: 1;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .premium-badge {
@@ -1317,6 +1341,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== RESPONSIVIDADE ===== */
+
+/* Tablet e Mobile Grande (max-width: 968px) */
 @media (max-width: 968px) {
     .nav-menu {
         display: none;
@@ -1351,12 +1377,38 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
     
+    /* Planos: 2 colunas em tablet */
     .pricing-info {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .plans-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .plan-card {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .plan-name {
+        font-size: 1.3rem;
+    }
+    
+    .plan-pricing {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem 0.8rem;
+    }
+    
+    .price-divider {
+        width: 100%;
+        height: 1px;
+    }
+    
+    .price-item {
+        width: 100%;
     }
     
     .portfolio-grid {
@@ -1368,22 +1420,85 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 576px) {
+/* Mobile Médio (max-width: 768px) */
+@media (max-width: 768px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: var(--spacing-lg) 0;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .section-title {
         font-size: 2rem;
     }
     
+    /* Planos: 1 coluna no mobile médio */
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .plan-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .plan-pricing {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .price-divider {
+        width: 1px;
+        height: 40px;
+    }
+    
+    .price-value {
+        font-size: 1.8rem;
+    }
+    
+    .plan-features li {
+        font-size: 0.95rem;
+        padding: 0.8rem 0;
+    }
+    
+    .plan-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 2rem;
+    }
+}
+
+/* Mobile Pequeno (max-width: 576px) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 0.9rem 1.5rem;
     }
     
     .hero-buttons {
@@ -1394,11 +1509,157 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
     
+    /* Planos: Layout vertical otimizado */
+    .pricing-info {
+        gap: 0.8rem;
+    }
+    
+    .info-card {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .info-card i {
+        font-size: 1.5rem;
+    }
+    
+    .info-card p {
+        font-size: 0.9rem;
+    }
+    
+    .plans-grid {
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .plan-card {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .plan-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .plan-name {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .plan-description {
+        font-size: 0.85rem;
+        min-height: auto;
+        margin-bottom: 1.2rem;
+    }
+    
+    .plan-pricing {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1.2rem 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .price-item {
+        text-align: center;
+    }
+    
+    .price-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .price-value {
+        font-size: 1.6rem;
+    }
+    
+    .price-period {
+        font-size: 0.85rem;
+    }
+    
+    .price-divider {
+        width: 60%;
+        height: 1px;
+        margin: 0 auto;
+    }
+    
+    .plan-features {
+        margin-bottom: 1.2rem;
+    }
+    
+    .plan-features li {
+        font-size: 0.88rem;
+        padding: 0.7rem 0;
+        gap: 0.6rem;
+    }
+    
+    .plan-features i {
+        font-size: 0.9rem;
+    }
+    
+    .btn-plan {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .plan-badge {
+        font-size: 0.65rem;
+        padding: 0.3rem 1.8rem;
+        right: -35px;
+    }
+    
+    /* WhatsApp Flutuante */
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-col h3 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile Extra Pequeno (max-width: 375px) */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .plan-name {
+        font-size: 1.2rem;
+    }
+    
+    .price-value {
+        font-size: 1.4rem;
+    }
+    
+    .plan-features li {
+        font-size: 0.82rem;
+    }
+    
+    .btn-plan {
+        font-size: 0.9rem;
+        padding: 0.9rem 1.2rem;
     }
 }
