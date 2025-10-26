@@ -389,7 +389,7 @@ Para mais detalhes de customização, consulte os arquivos na pasta `docs/`.
 **R&C Dev**
 - 📱 WhatsApp: [(21) 97266-1951](https://wa.me/5521972661951)
 - 📧 Email: [Contato via formulário]
-- 🌐 Website: [Seu domínio]
+- 🌐 Website: [(https://rc-desenvolvimento.vercel.app/)]
 
 ---
 
