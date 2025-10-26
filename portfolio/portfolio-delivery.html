@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Delivery Premium</title>
+    <link rel="stylesheet" href="../assets/css/delivery-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Container -->
+    <div class="mobile-frame">
+        <!-- Demo Notice -->
+        <div class="demo-banner">
+            <p><i class="fas fa-mobile-alt"></i> Demo Mobile - Portfólio R&C Dev</p>
+            <a href="../index.html" class="btn-back-mobile">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+
+        <!-- App Container -->
+        <div class="app-container">
+            <!-- Sidebar Menu -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="user-profile-sidebar">
+                        <div class="avatar-large">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info-sidebar">
+                            <h3>João Silva</h3>
+                            <p>joao.silva@email.com</p>
+                        </div>
+                    </div>
+                    <button class="close-sidebar" onclick="toggleSidebar()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-link active" onclick="showScreen('home')">
+                        <i class="fas fa-home"></i>
+                        <span>Início</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showScreen('favorites')">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showScreen('orders')">
+                        <i class="fas fa-history"></i>
+                        <span>Histórico de Pedidos</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showScreen('payment')">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Métodos de Pagamento</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showScreen('points')">
+                        <i class="fas fa-star"></i>
+                        <span>Pontos de Fidelidade</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showScreen('profile')">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Perfil</span>
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Política de Privacidade</span>
+                    </a>
+                    <a href="#" class="sidebar-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Home Screen -->
+                <div class="screen active" id="home-screen">
+                    <!-- Header -->
+                    <header class="app-header">
+                        <button class="menu-btn" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="header-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="location-label">Entregar em</span>
+                                <span class="location-text">Rua Exemplo, 123</span>
+                            </div>
+                        </div>
+                        <button class="notifications-btn" onclick="showScreen('notifications')">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </header>
+
+                    <!-- Search Bar -->
+                    <div class="search-section">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar pratos ou restaurantes...">
+                        </div>
+                        <button class="filter-btn">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="categories-section">
+                        <h2 class="section-title">Categorias</h2>
+                        <div class="categories-scroll">
+                            <button class="category-chip active">
+                                <i class="fas fa-pizza-slice"></i>
+                                <span>Pizza</span>
+                            </button>
+                            <button class="category-chip">
+                                <i class="fas fa-hamburger"></i>
+                                <span>Burger</span>
+                            </button>
+                            <button class="category-chip">
+                                <i class="fas fa-fish"></i>
+                                <span>Sushi</span>
+                            </button>
+                            <button class="category-chip">
+                                <i class="fas fa-drumstick-bite"></i>
+                                <span>Kebab</span>
+                            </button>
+                            <button class="category-chip">
+                                <i class="fas fa-ice-cream"></i>
+                                <span>Sobremesa</span>
+                            </button>
+                            <button class="category-chip">
+                                <i class="fas fa-coffee"></i>
+                                <span>Bebidas</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Banner -->
+                    <div class="featured-banner">
+                        <div class="banner-content">
+                            <span class="banner-tag">OFERTA ESPECIAL</span>
+                            <h3>30% OFF em Pizzas</h3>
+                            <p>Válido até meia-noite</p>
+                        </div>
+                        <div class="banner-icon">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-section">
+                        <div class="section-header-row">
+                            <h2 class="section-title">Populares</h2>
+                            <a href="#" class="see-all">Ver Todos</a>
+                        </div>
+                        <div class="products-grid">
+                            <!-- Product Card 1 -->
+                            <div class="product-card" onclick="showProductDetail('Pizza Margherita', 'R$ 45,90')">
+                                <div class="product-image">
+                                    <i class="fas fa-pizza-slice"></i>
+                                    <button class="favorite-btn">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Pizza Margherita</h3>
+                                    <p class="product-description">Molho, mussarela e manjericão</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                        <span class="product-price">R$ 45,90</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+
+                            <!-- Product Card 2 -->
+                            <div class="product-card" onclick="showProductDetail('Burger Gourmet', 'R$ 38,50')">
+                                <div class="product-image burger">
+                                    <i class="fas fa-hamburger"></i>
+                                    <button class="favorite-btn">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Burger Gourmet</h3>
+                                    <p class="product-description">Carne angus, queijo e bacon</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9</span>
+                                        </div>
+                                        <span class="product-price">R$ 38,50</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+
+                            <!-- Product Card 3 -->
+                            <div class="product-card" onclick="showProductDetail('Sushi Combo', 'R$ 68,00')">
+                                <div class="product-image sushi">
+                                    <i class="fas fa-fish"></i>
+                                    <button class="favorite-btn">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Sushi Combo</h3>
+                                    <p class="product-description">20 peças variadas</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>5.0</span>
+                                        </div>
+                                        <span class="product-price">R$ 68,00</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+
+                            <!-- Product Card 4 -->
+                            <div class="product-card" onclick="showProductDetail('Kebab Premium', 'R$ 32,90')">
+                                <div class="product-image kebab">
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <button class="favorite-btn">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Kebab Premium</h3>
+                                    <p class="product-description">Frango, salada e molhos</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.7</span>
+                                        </div>
+                                        <span class="product-price">R$ 32,90</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Navigation -->
+                    <nav class="bottom-nav">
+                        <button class="nav-btn active" onclick="showScreen('home')">
+                            <i class="fas fa-home"></i>
+                            <span>Início</span>
+                        </button>
+                        <button class="nav-btn" onclick="showScreen('favorites')">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                        </button>
+                        <button class="nav-btn cart-nav-btn" onclick="showScreen('cart')">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrinho</span>
+                            <span class="cart-count">2</span>
+                        </button>
+                        <button class="nav-btn" onclick="showScreen('profile')">
+                            <i class="fas fa-user"></i>
+                            <span>Perfil</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Product Detail Screen -->
+                <div class="screen" id="product-detail-screen">
+                    <div class="detail-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2 id="detail-product-name">Pizza Margherita</h2>
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-image">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+
+                        <div class="detail-info">
+                            <div class="detail-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>25-35 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-fire"></i>
+                                    <span>450 kcal</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (234)</span>
+                                </div>
+                            </div>
+
+                            <h3>Descrição</h3>
+                            <p class="detail-description">
+                                Pizza tradicional italiana com molho de tomate caseiro, 
+                                mussarela de búfala e folhas frescas de manjericão. 
+                                Massa fina e crocante preparada artesanalmente.
+                            </p>
+
+                            <h3>Ingredientes</h3>
+                            <div class="ingredients-list">
+                                <span class="ingredient-tag">Molho de Tomate</span>
+                                <span class="ingredient-tag">Mussarela</span>
+                                <span class="ingredient-tag">Manjericão</span>
+                                <span class="ingredient-tag">Azeite</span>
+                            </div>
+
+                            <div class="quantity-selector">
+                                <button class="qty-btn" onclick="decreaseQty()">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="qty-value" id="qty-value">1</span>
+                                <button class="qty-btn" onclick="increaseQty()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+
+                            <button class="add-to-cart-large" onclick="addToCart()">
+                                <i class="fas fa-shopping-cart"></i>
+                                Adicionar ao Carrinho - <span id="detail-product-price">R$ 45,90</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Screen -->
+                <div class="screen" id="cart-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Meu Carrinho</h2>
+                        <button class="clear-cart-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-content">
+                        <div class="cart-items">
+                            <!-- Cart Item 1 -->
+                            <div class="cart-item">
+                                <div class="cart-item-image">
+                                    <i class="fas fa-pizza-slice"></i>
+                                </div>
+                                <div class="cart-item-info">
+                                    <h4>Pizza Margherita</h4>
+                                    <p>Massa fina, mussarela</p>
+                                    <span class="cart-item-price">R$ 45,90</span>
+                                </div>
+                                <div class="cart-item-controls">
+                                    <button class="qty-btn-small">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-small">1</span>
+                                    <button class="qty-btn-small">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="cart-item">
+                                <div class="cart-item-image burger">
+                                    <i class="fas fa-hamburger"></i>
+                                </div>
+                                <div class="cart-item-info">
+                                    <h4>Burger Gourmet</h4>
+                                    <p>Angus, queijo, bacon</p>
+                                    <span class="cart-item-price">R$ 38,50</span>
+                                </div>
+                                <div class="cart-item-controls">
+                                    <button class="qty-btn-small">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-small">1</span>
+                                    <button class="qty-btn-small">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="order-summary">
+                            <h3>Resumo do Pedido</h3>
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>R$ 84,40</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Taxa de Entrega</span>
+                                <span>R$ 5,00</span>
+                            </div>
+                            <div class="summary-row discount">
+                                <span>Desconto</span>
+                                <span>- R$ 8,44</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span>R$ 80,96</span>
+                            </div>
+                        </div>
+
+                        <button class="checkout-btn" onclick="showScreen('checkout')">
+                            Finalizar Pedido
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Checkout Screen -->
+                <div class="screen" id="checkout-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('cart')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Pagamento</h2>
+                    </div>
+
+                    <div class="checkout-content">
+                        <div class="payment-methods">
+                            <h3>Método de Pagamento</h3>
+                            <div class="payment-option">
+                                <div class="payment-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h4>Cartão de Crédito</h4>
+                                    <p>•••• •••• •••• 4532</p>
+                                </div>
+                                <input type="radio" name="payment" checked>
+                            </div>
+                            <div class="payment-option">
+                                <div class="payment-icon paypal">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h4>PayPal</h4>
+                                    <p>usuario@email.com</p>
+                                </div>
+                                <input type="radio" name="payment">
+                            </div>
+                            <div class="payment-option">
+                                <div class="payment-icon google">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h4>Google Pay</h4>
+                                    <p>Pagamento rápido</p>
+                                </div>
+                                <input type="radio" name="payment">
+                            </div>
+                        </div>
+
+                        <div class="coupon-section">
+                            <h3>Cupom de Desconto</h3>
+                            <div class="coupon-input-group">
+                                <input type="text" placeholder="Digite o código do cupom">
+                                <button class="apply-btn">Aplicar</button>
+                            </div>
+                        </div>
+
+                        <div class="final-summary">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>R$ 84,40</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Taxa de Entrega</span>
+                                <span>R$ 5,00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Desconto (10%)</span>
+                                <span class="discount-value">- R$ 8,44</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total">
+                                <span>Total a Pagar</span>
+                                <span>R$ 80,96</span>
+                            </div>
+                        </div>
+
+                        <button class="place-order-btn" onclick="showScreen('tracking')">
+                            Confirmar Pagamento
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tracking Screen -->
+                <div class="screen" id="tracking-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Rastreamento</h2>
+                    </div>
+
+                    <div class="tracking-content">
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <div class="delivery-route"></div>
+                                <div class="delivery-marker">
+                                    <i class="fas fa-motorcycle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tracking-info">
+                            <div class="status-timeline">
+                                <div class="status-item completed">
+                                    <div class="status-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="status-text">
+                                        <h4>Pedido Confirmado</h4>
+                                        <p>15:23</p>
+                                    </div>
+                                </div>
+                                <div class="status-item completed">
+                                    <div class="status-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="status-text">
+                                        <h4>Preparando</h4>
+                                        <p>15:30</p>
+                                    </div>
+                                </div>
+                                <div class="status-item active">
+                                    <div class="status-icon">
+                                        <i class="fas fa-motorcycle"></i>
+                                    </div>
+                                    <div class="status-text">
+                                        <h4>Saiu para Entrega</h4>
+                                        <p>15:45</p>
+                                    </div>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="status-text">
+                                        <h4>Entregue</h4>
+                                        <p>Aprox. 16:10</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="driver-card">
+                                <div class="driver-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="driver-info">
+                                    <h4>Carlos Santos</h4>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <button class="call-btn">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+
+                            <div class="eta-card">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Tempo Estimado</h4>
+                                    <p class="eta-time">15-20 minutos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Screen -->
+                <div class="screen" id="profile-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Perfil</h2>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="profile-avatar-section">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                                <button class="edit-photo-btn">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="profile-form">
+                            <div class="form-group">
+                                <label>Nome Completo</label>
+                                <input type="text" value="João Silva" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" value="joao.silva@email.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" value="(21) 99999-9999" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                <input type="text" value="Rua Exemplo, 123" class="form-input">
+                            </div>
+
+                            <button class="save-profile-btn">
+                                <i class="fas fa-save"></i>
+                                Salvar Alterações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Screen -->
+                <div class="screen" id="notifications-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Notificações</h2>
+                    </div>
+
+                    <div class="notifications-content">
+                        <div class="notification-item">
+                            <div class="notification-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="notification-text">
+                                <h4>Pedido Entregue!</h4>
+                                <p>Seu pedido #2847 foi entregue com sucesso</p>
+                                <span class="notification-time">Há 2 horas</span>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon info">
+                                <i class="fas fa-percent"></i>
+                            </div>
+                            <div class="notification-text">
+                                <h4>Nova Promoção!</h4>
+                                <p>30% OFF em todas as pizzas hoje</p>
+                                <span class="notification-time">Há 5 horas</span>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon warning">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="notification-text">
+                                <h4>Você ganhou 50 pontos!</h4>
+                                <p>Continue pedindo e ganhe recompensas</p>
+                                <span class="notification-time">Há 1 dia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Points Screen -->
+                <div class="screen" id="points-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Pontos de Fidelidade</h2>
+                    </div>
+
+                    <div class="points-content">
+                        <div class="points-balance">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h3>Seus Pontos</h3>
+                                <p class="points-value">1.250 pontos</p>
+                            </div>
+                        </div>
+
+                        <div class="points-history">
+                            <h3>Histórico</h3>
+                            <div class="points-item">
+                                <div class="points-icon positive">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="points-info">
+                                    <h4>Pedido Realizado</h4>
+                                    <p>Pedido #2847</p>
+                                </div>
+                                <span class="points-amount positive">+70</span>
+                            </div>
+
+                            <div class="points-item">
+                                <div class="points-icon positive">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="points-info">
+                                    <h4>Primeira Compra</h4>
+                                    <p>Bônus de boas-vindas</p>
+                                </div>
+                                <span class="points-amount positive">+50</span>
+                            </div>
+
+                            <div class="points-item">
+                                <div class="points-icon positive">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="points-info">
+                                    <h4>Avaliação</h4>
+                                    <p>Avaliou um pedido</p>
+                                </div>
+                                <span class="points-amount positive">+20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorites Screen -->
+                <div class="screen" id="favorites-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Favoritos</h2>
+                    </div>
+
+                    <div class="favorites-content">
+                        <div class="favorites-grid">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <i class="fas fa-pizza-slice"></i>
+                                    <button class="favorite-btn active">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Pizza Margherita</h3>
+                                    <p class="product-description">Molho, mussarela e manjericão</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                        <span class="product-price">R$ 45,90</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image sushi">
+                                    <i class="fas fa-fish"></i>
+                                    <button class="favorite-btn active">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Sushi Combo</h3>
+                                    <p class="product-description">20 peças variadas</p>
+                                    <div class="product-footer">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>5.0</span>
+                                        </div>
+                                        <span class="product-price">R$ 68,00</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders History Screen -->
+                <div class="screen" id="orders-screen">
+                    <div class="screen-header">
+                        <button class="back-btn" onclick="showScreen('home')">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h2>Meus Pedidos</h2>
+                    </div>
+
+                    <div class="orders-content">
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <h4>Pedido #2847</h4>
+                                    <p>Hoje, 15:23</p>
+                                </div>
+                                <span class="order-status delivered">Entregue</span>
+                            </div>
+                            <div class="order-items">
+                                <p>2 itens • R$ 84,40</p>
+                            </div>
+                            <button class="reorder-btn">
+                                <i class="fas fa-redo"></i>
+                                Pedir Novamente
+                            </button>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <h4>Pedido #2846</h4>
+                                    <p>Ontem, 19:15</p>
+                                </div>
+                                <span class="order-status delivered">Entregue</span>
+                            </div>
+                            <div class="order-items">
+                                <p>3 itens • R$ 127,50</p>
+                            </div>
+                            <button class="reorder-btn">
+                                <i class="fas fa-redo"></i>
+                                Pedir Novamente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/delivery-script.js"></script>
+</body>
+</html>

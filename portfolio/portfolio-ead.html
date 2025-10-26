@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Plataforma de Cursos Online</title>
+    <link rel="stylesheet" href="../assets/css/ead-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Demo Notice -->
+    <div class="demo-notice-ead">
+        <div class="demo-content-ead">
+            <span class="demo-icon-ead">📚</span>
+            <p><strong>DEMO:</strong> Plataforma de Cursos EAD - Portfolio R&C Dev</p>
+            <a href="../index.html" class="btn-back-ead">← Voltar ao Portfolio</a>
+        </div>
+    </div>
+
+    <div class="app-container-ead">
+        <!-- Sidebar -->
+        <aside class="sidebar-ead" id="sidebar">
+            <div class="sidebar-header-ead">
+                <div class="logo-ead">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="logo-text-ead">LearnHub</span>
+                </div>
+                <button class="sidebar-toggle-ead" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav-ead">
+                <a href="#dashboard" class="nav-item-ead active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="nav-label-ead">Desempenho</span>
+                </a>
+                <a href="#courses" class="nav-item-ead" data-section="courses">
+                    <i class="fas fa-book-open"></i>
+                    <span class="nav-label-ead">Cursos</span>
+                </a>
+                <a href="#comments" class="nav-item-ead" data-section="comments">
+                    <i class="fas fa-comment-dots"></i>
+                    <span class="nav-label-ead">Comentários</span>
+                </a>
+                <a href="#tools" class="nav-item-ead" data-section="tools">
+                    <i class="fas fa-tools"></i>
+                    <span class="nav-label-ead">Ferramentas</span>
+                </a>
+                <a href="#resources" class="nav-item-ead" data-section="resources">
+                    <i class="fas fa-folder-open"></i>
+                    <span class="nav-label-ead">Recursos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-upgrade-ead">
+                <div class="upgrade-card-ead">
+                    <div class="upgrade-icon-ead">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>Melhore seu plano</h4>
+                    <p>Plano Pro</p>
+                    <button class="btn-upgrade-ead">
+                        <span>Melhorar Agora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content-ead">
+            <!-- Header -->
+            <header class="header-ead">
+                <div class="header-left-ead">
+                    <h1 class="page-title-ead">Atividade dos Cursos</h1>
+                    <span class="page-date-ead">
+                        <i class="fas fa-calendar-alt"></i>
+                        25 de Outubro, 2025
+                    </span>
+                </div>
+                <div class="header-right-ead">
+                    <div class="search-bar-ead">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar cursos...">
+                    </div>
+                    <button class="notification-btn-ead">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge-ead">3</span>
+                    </button>
+                    <div class="user-profile-ead">
+                        <img src="https://ui-avatars.com/api/?name=Estudante+Usuario&background=2563EB&color=fff" alt="Usuário">
+                        <div class="user-info-ead">
+                            <span class="user-name-ead">Estudante Usuário</span>
+                            <span class="user-role-ead">Membro Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid-ead">
+                <!-- Active Courses Section -->
+                <section class="courses-section-ead">
+                    <div class="section-header-ead">
+                        <h2>Cursos Ativos</h2>
+                        <button class="btn-add-course-ead">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="courses-grid-ead">
+                        <!-- Course Card 1 - Blue -->
+                        <div class="course-card-ead blue" data-animate="fade-up">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Desenvolvimento Web Completo</h3>
+                                <p class="course-subtitle-ead">Siga esses passos fáceis e simples</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead">
+                                        <i class="fas fa-users"></i>
+                                        <span>12 Inscritos</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>24 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 2 - Purple -->
+                        <div class="course-card-ead purple" data-animate="fade-up" data-delay="100">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Fundamentos de UI/UX Design</h3>
+                                <p class="course-subtitle-ead">Domine a arte do design de interfaces</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead">
+                                        <i class="fas fa-users"></i>
+                                        <span>8 Inscritos</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>18 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 3 - Yellow -->
+                        <div class="course-card-ead yellow" data-animate="fade-up" data-delay="200">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Estratégia de Marketing Digital</h3>
+                                <p class="course-subtitle-ead">Impulsione sua presença online efetivamente</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead full">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Lotado</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>15 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 4 - Red -->
+                        <div class="course-card-ead red" data-animate="fade-up" data-delay="300">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Ciência de Dados & Analytics</h3>
+                                <p class="course-subtitle-ead">Transforme dados em insights valiosos</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead">
+                                        <i class="fas fa-users"></i>
+                                        <span>15 Inscritos</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>30 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 5 - Blue -->
+                        <div class="course-card-ead blue" data-animate="fade-up" data-delay="400">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Desenvolvimento Mobile</h3>
+                                <p class="course-subtitle-ead">Crie apps iOS e Android do zero</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead">
+                                        <i class="fas fa-users"></i>
+                                        <span>10 Inscritos</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>22 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 6 - Purple -->
+                        <div class="course-card-ead purple" data-animate="fade-up" data-delay="500">
+                            <div class="course-icon-ead">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="course-content-ead">
+                                <h3 class="course-title-ead">Fundamentos de Machine Learning</h3>
+                                <p class="course-subtitle-ead">Introdução aos algoritmos de IA e ML</p>
+                                <div class="course-footer-ead">
+                                    <div class="course-enrolled-ead">
+                                        <i class="fas fa-users"></i>
+                                        <span>6 Inscritos</span>
+                                    </div>
+                                    <div class="course-lessons-ead">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>20 Aulas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Sidebar -->
+                <aside class="right-sidebar-ead">
+                    <!-- My Learning Section -->
+                    <section class="my-learning-ead">
+                        <div class="section-header-ead">
+                            <h2>Meu Aprendizado</h2>
+                            <a href="#" class="view-all-ead">Ver Todos</a>
+                        </div>
+
+                        <div class="learning-list-ead">
+                            <!-- Learning Item 1 -->
+                            <div class="learning-item-ead blue" data-animate="slide-left">
+                                <div class="learning-icon-ead">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="learning-content-ead">
+                                    <h4>Desenvolvimento Web</h4>
+                                    <p>Economize tempo e torne seu negócio mais eficaz promovendo...</p>
+                                    <div class="progress-bar-ead">
+                                        <div class="progress-fill-ead" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="learning-progress-ead">
+                                    <svg class="progress-circle-ead" viewBox="0 0 36 36">
+                                        <path class="circle-bg-ead"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle-ead"
+                                            stroke-dasharray="75, 100"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <text x="18" y="20.5" class="percentage-ead">75%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Learning Item 2 -->
+                            <div class="learning-item-ead purple" data-animate="slide-left" data-delay="100">
+                                <div class="learning-icon-ead">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="learning-content-ead">
+                                    <h4>UI/UX Design</h4>
+                                    <p>Aprenda a criar experiências de usuário bonitas e intuitivas...</p>
+                                    <div class="progress-bar-ead">
+                                        <div class="progress-fill-ead" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="learning-progress-ead">
+                                    <svg class="progress-circle-ead" viewBox="0 0 36 36">
+                                        <path class="circle-bg-ead"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle-ead"
+                                            stroke-dasharray="60, 100"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <text x="18" y="20.5" class="percentage-ead">60%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Learning Item 3 -->
+                            <div class="learning-item-ead yellow" data-animate="slide-left" data-delay="200">
+                                <div class="learning-icon-ead">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="learning-content-ead">
+                                    <h4>Marketing Digital</h4>
+                                    <p>Domine SEO, redes sociais e estratégias de marketing de conteúdo...</p>
+                                    <div class="progress-bar-ead">
+                                        <div class="progress-fill-ead" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="learning-progress-ead">
+                                    <svg class="progress-circle-ead" viewBox="0 0 36 36">
+                                        <path class="circle-bg-ead"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle-ead"
+                                            stroke-dasharray="90, 100"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <text x="18" y="20.5" class="percentage-ead">90%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Learning Item 4 -->
+                            <div class="learning-item-ead red" data-animate="slide-left" data-delay="300">
+                                <div class="learning-icon-ead">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="learning-content-ead">
+                                    <h4>Ciência de Dados</h4>
+                                    <p>Analise conjuntos de dados complexos e construa modelos preditivos...</p>
+                                    <div class="progress-bar-ead">
+                                        <div class="progress-fill-ead" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <div class="learning-progress-ead">
+                                    <svg class="progress-circle-ead" viewBox="0 0 36 36">
+                                        <path class="circle-bg-ead"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle-ead"
+                                            stroke-dasharray="45, 100"
+                                            d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <text x="18" y="20.5" class="percentage-ead">45%</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Planning Section -->
+                    <section class="planning-ead">
+                        <div class="section-header-ead">
+                            <h2>Planejamento</h2>
+                            <div class="planning-tabs-ead">
+                                <button class="planning-tab-ead active">Esta Semana</button>
+                                <button class="planning-tab-ead">Próxima Semana</button>
+                                <button class="planning-tab-ead">Este Mês</button>
+                            </div>
+                        </div>
+
+                        <div class="planning-calendar-ead">
+                            <!-- Calendar Header -->
+                            <div class="calendar-header-ead">
+                                <div class="day-label-ead">S</div>
+                                <div class="day-label-ead">T</div>
+                                <div class="day-label-ead">Q</div>
+                                <div class="day-label-ead">Q</div>
+                                <div class="day-label-ead">S</div>
+                                <div class="day-label-ead">S</div>
+                            </div>
+
+                            <!-- Calendar Grid -->
+                            <div class="calendar-grid-ead">
+                                <!-- Event 1 - Segunda -->
+                                <div class="calendar-event-ead blue" style="grid-column: 1; grid-row: 1;">
+                                    <span class="event-time-ead">09:00</span>
+                                    <span class="event-title-ead">Aula Web Dev</span>
+                                </div>
+
+                                <!-- Event 2 - Terça -->
+                                <div class="calendar-event-ead purple" style="grid-column: 2; grid-row: 1;">
+                                    <span class="event-time-ead">14:00</span>
+                                    <span class="event-title-ead">Workshop Design</span>
+                                </div>
+
+                                <!-- Event 3 - Quarta -->
+                                <div class="calendar-event-ead yellow" style="grid-column: 3; grid-row: 1;">
+                                    <span class="event-time-ead">10:00</span>
+                                    <span class="event-title-ead">Seminário Marketing</span>
+                                </div>
+
+                                <!-- Event 4 - Quinta -->
+                                <div class="calendar-event-ead red" style="grid-column: 4; grid-row: 1;">
+                                    <span class="event-time-ead">16:00</span>
+                                    <span class="event-title-ead">Análise de Dados</span>
+                                </div>
+
+                                <!-- Event 5 - Sexta -->
+                                <div class="calendar-event-ead blue" style="grid-column: 5; grid-row: 1;">
+                                    <span class="event-time-ead">11:00</span>
+                                    <span class="event-title-ead">Revisão Projeto</span>
+                                </div>
+                            </div>
+
+                            <!-- Reminder Note -->
+                            <div class="reminder-note-ead">
+                                <i class="fas fa-sticky-note"></i>
+                                <p>Não esqueça de ligar para João sobre a apresentação final do projeto na sexta-feira</p>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+
+            <!-- Stats Section -->
+            <section class="stats-section-ead">
+                <div class="stat-card-ead blue" data-animate="scale">
+                    <div class="stat-icon-ead">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <div class="stat-content-ead">
+                        <h3 class="stat-value-ead">6</h3>
+                        <p class="stat-label-ead">Cursos Matriculados</p>
+                    </div>
+                </div>
+
+                <div class="stat-card-ead purple" data-animate="scale" data-delay="100">
+                    <div class="stat-icon-ead">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content-ead">
+                        <h3 class="stat-value-ead">42h</h3>
+                        <p class="stat-label-ead">Tempo de Estudo</p>
+                    </div>
+                </div>
+
+                <div class="stat-card-ead yellow" data-animate="scale" data-delay="200">
+                    <div class="stat-icon-ead">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-content-ead">
+                        <h3 class="stat-value-ead">3</h3>
+                        <p class="stat-label-ead">Certificados Conquistados</p>
+                    </div>
+                </div>
+
+                <div class="stat-card-ead red" data-animate="scale" data-delay="300">
+                    <div class="stat-icon-ead">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content-ead">
+                        <h3 class="stat-value-ead">85%</h3>
+                        <p class="stat-label-ead">Nota Média</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../assets/js/ead-script.js"></script>
+</body>
+</html>

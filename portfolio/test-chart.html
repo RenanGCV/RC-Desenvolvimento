@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Chart.js</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #0f1535;
+            color: white;
+        }
+        #status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #1a2045;
+        }
+        canvas {
+            max-width: 600px;
+            margin: 20px 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <h1>🧪 Teste de Chart.js</h1>
+    <div id="status"></div>
+    <canvas id="testChart"></canvas>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        
+        // Test 1: Check if Chart.js loaded
+        if (typeof Chart === 'undefined') {
+            statusDiv.innerHTML += '<p>❌ Chart.js NÃO carregou!</p>';
+        } else {
+            statusDiv.innerHTML += '<p>✅ Chart.js carregou com sucesso!</p>';
+        }
+
+        // Test 2: Check DOM Ready
+        document.addEventListener('DOMContentLoaded', () => {
+            statusDiv.innerHTML += '<p>✅ DOM pronto!</p>';
+            
+            // Test 3: Find canvas
+            const canvas = document.getElementById('testChart');
+            if (!canvas) {
+                statusDiv.innerHTML += '<p>❌ Canvas não encontrado!</p>';
+                return;
+            }
+            statusDiv.innerHTML += '<p>✅ Canvas encontrado!</p>';
+            
+            // Test 4: Create chart
+            try {
+                new Chart(canvas, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                        datasets: [{
+                            label: 'Vendas',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderColor: '#00ffff',
+                            backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#fff'
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: { color: '#fff' },
+                                grid: { color: '#2a3150' }
+                            },
+                            x: {
+                                ticks: { color: '#fff' },
+                                grid: { color: '#2a3150' }
+                            }
+                        }
+                    }
+                });
+                statusDiv.innerHTML += '<p>✅ Gráfico criado com sucesso!</p>';
+            } catch (error) {
+                statusDiv.innerHTML += `<p>❌ Erro ao criar gráfico: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

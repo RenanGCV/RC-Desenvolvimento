@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile360 - Sistema Médico</title>
+    <link rel="stylesheet" href="../assets/css/medico-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Demo Notice -->
+    <div class="demo-notice-med">
+        <div class="demo-content-med">
+            <span class="demo-icon-med">🏥</span>
+            <p><strong>DEMO:</strong> Sistema Médico - Portfolio R&C Dev</p>
+            <a href="../index.html" class="btn-back-med">← Voltar ao Portfolio</a>
+        </div>
+    </div>
+
+    <div class="app-container-med">
+        <!-- Sidebar -->
+        <aside class="sidebar-med" id="sidebarMed">
+            <div class="sidebar-header-med">
+                <div class="logo-med">
+                    <i class="fas fa-tooth"></i>
+                    <span class="logo-text-med">Smile360</span>
+                </div>
+                <button class="sidebar-toggle-med" id="sidebarToggleMed">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav-med">
+                <a href="#dashboard" class="nav-item-med" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="nav-label-med">Dashboard</span>
+                </a>
+                <a href="#schedule" class="nav-item-med" data-section="schedule">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="nav-label-med">Agenda</span>
+                </a>
+                <a href="#appointments" class="nav-item-med active" data-section="appointments">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="nav-label-med">Consultas</span>
+                </a>
+                <a href="#patients" class="nav-item-med" data-section="patients">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-label-med">Pacientes</span>
+                </a>
+                <a href="#doctors" class="nav-item-med" data-section="doctors">
+                    <i class="fas fa-user-md"></i>
+                    <span class="nav-label-med">Médicos</span>
+                </a>
+                <a href="#messages" class="nav-item-med" data-section="messages">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-label-med">Mensagens</span>
+                    <span class="badge-med">5</span>
+                </a>
+                <a href="#payments" class="nav-item-med" data-section="payments">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="nav-label-med">Pagamentos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer-med">
+                <a href="#settings" class="nav-item-med" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label-med">Configurações</span>
+                </a>
+                <a href="#support" class="nav-item-med" data-section="support">
+                    <i class="fas fa-life-ring"></i>
+                    <span class="nav-label-med">Suporte</span>
+                </a>
+                <a href="#logout" class="nav-item-med logout-med" data-section="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-label-med">Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content-med">
+            <!-- Header -->
+            <header class="header-med">
+                <div class="header-left-med">
+                    <div class="period-selector-med">
+                        <button class="period-nav-btn-med" id="prevPeriod">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="period-text-med">19-25 de Fevereiro, 2024</span>
+                        <button class="period-nav-btn-med" id="nextPeriod">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="header-center-med">
+                    <div class="search-bar-med">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar pacientes, consultas...">
+                    </div>
+                </div>
+
+                <div class="header-right-med">
+                    <button class="icon-btn-med" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn-med notification-btn-med">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge-med">3</span>
+                    </button>
+                    <div class="user-profile-med">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Shin+Tamura&background=2563EB&color=fff" alt="Dr. Shin Tamura">
+                        <div class="user-info-med">
+                            <span class="user-name-med">Dr. Shin Tamura</span>
+                            <span class="user-role-med">Odontologista</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title -->
+            <div class="page-title-section-med">
+                <div class="title-left-med">
+                    <h1>Consultas</h1>
+                    <p class="subtitle-med">Gerencie todas as consultas agendadas</p>
+                </div>
+                <div class="title-right-med">
+                    <div class="filter-tabs-med">
+                        <button class="filter-tab-med active">Semanal</button>
+                        <button class="filter-tab-med">Mensal</button>
+                        <button class="filter-tab-med">Anual</button>
+                    </div>
+                    <button class="btn-primary-med" id="addAppointment">
+                        <i class="fas fa-plus"></i>
+                        <span>Nova Consulta</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid-med">
+                <div class="stat-card-med blue">
+                    <div class="stat-icon-med">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content-med">
+                        <span class="stat-label-med">Total de Consultas</span>
+                        <h3 class="stat-value-med">127</h3>
+                        <span class="stat-change-med positive">
+                            <i class="fas fa-arrow-up"></i> 12% vs. semana passada
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card-med green">
+                    <div class="stat-icon-med">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content-med">
+                        <span class="stat-label-med">Confirmadas</span>
+                        <h3 class="stat-value-med">98</h3>
+                        <span class="stat-change-med positive">
+                            <i class="fas fa-arrow-up"></i> 8% vs. semana passada
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card-med yellow">
+                    <div class="stat-icon-med">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content-med">
+                        <span class="stat-label-med">Pendentes</span>
+                        <h3 class="stat-value-med">18</h3>
+                        <span class="stat-change-med neutral">
+                            <i class="fas fa-minus"></i> Sem mudanças
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card-med red">
+                    <div class="stat-icon-med">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content-med">
+                        <span class="stat-label-med">Canceladas</span>
+                        <h3 class="stat-value-med">11</h3>
+                        <span class="stat-change-med negative">
+                            <i class="fas fa-arrow-down"></i> 5% vs. semana passada
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointments Table -->
+            <div class="table-container-med">
+                <div class="table-header-med">
+                    <h2>Lista de Consultas</h2>
+                    <div class="table-actions-med">
+                        <button class="btn-secondary-med">
+                            <i class="fas fa-filter"></i>
+                            Filtrar
+                        </button>
+                        <button class="btn-secondary-med">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+
+                <table class="appointments-table-med">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>
+                                Nome do Paciente
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Gênero
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Idade
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Data
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Horário
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Diagnóstico
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>
+                                Status
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Maria+Silva&background=E0F2FE&color=0284C7" alt="Maria Silva">
+                                    <span>Maria Silva</span>
+                                </div>
+                            </td>
+                            <td>Feminino</td>
+                            <td>34</td>
+                            <td>19 Fev, 2024</td>
+                            <td>09:00</td>
+                            <td>Limpeza Dental</td>
+                            <td><span class="status-badge-med confirmed">Confirmada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=João+Santos&background=DBEAFE&color=1E40AF" alt="João Santos">
+                                    <span>João Santos</span>
+                                </div>
+                            </td>
+                            <td>Masculino</td>
+                            <td>28</td>
+                            <td>19 Fev, 2024</td>
+                            <td>10:30</td>
+                            <td>Extração de Dente</td>
+                            <td><span class="status-badge-med confirmed">Confirmada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Ana+Costa&background=FEF3C7&color=D97706" alt="Ana Costa">
+                                    <span>Ana Costa</span>
+                                </div>
+                            </td>
+                            <td>Feminino</td>
+                            <td>42</td>
+                            <td>20 Fev, 2024</td>
+                            <td>14:00</td>
+                            <td>Canal Radicular</td>
+                            <td><span class="status-badge-med pending">Pendente</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Pedro+Oliveira&background=D1FAE5&color=059669" alt="Pedro Oliveira">
+                                    <span>Pedro Oliveira</span>
+                                </div>
+                            </td>
+                            <td>Masculino</td>
+                            <td>55</td>
+                            <td>20 Fev, 2024</td>
+                            <td>16:30</td>
+                            <td>Prótese Dentária</td>
+                            <td><span class="status-badge-med confirmed">Confirmada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Carla+Rodrigues&background=FCE7F3&color=DB2777" alt="Carla Rodrigues">
+                                    <span>Carla Rodrigues</span>
+                                </div>
+                            </td>
+                            <td>Feminino</td>
+                            <td>31</td>
+                            <td>21 Fev, 2024</td>
+                            <td>09:30</td>
+                            <td>Clareamento Dental</td>
+                            <td><span class="status-badge-med cancelled">Cancelada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 6 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Lucas+Ferreira&background=E0E7FF&color=4F46E5" alt="Lucas Ferreira">
+                                    <span>Lucas Ferreira</span>
+                                </div>
+                            </td>
+                            <td>Masculino</td>
+                            <td>19</td>
+                            <td>21 Fev, 2024</td>
+                            <td>11:00</td>
+                            <td>Aparelho Ortodôntico</td>
+                            <td><span class="status-badge-med confirmed">Confirmada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 7 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Beatriz+Almeida&background=FEE2E2&color=DC2626" alt="Beatriz Almeida">
+                                    <span>Beatriz Almeida</span>
+                                </div>
+                            </td>
+                            <td>Feminino</td>
+                            <td>47</td>
+                            <td>22 Fev, 2024</td>
+                            <td>15:00</td>
+                            <td>Implante Dentário</td>
+                            <td><span class="status-badge-med pending">Pendente</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 8 -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="patient-cell-med">
+                                    <img src="https://ui-avatars.com/api/?name=Rafael+Souza&background=DBEAFE&color=2563EB" alt="Rafael Souza">
+                                    <span>Rafael Souza</span>
+                                </div>
+                            </td>
+                            <td>Masculino</td>
+                            <td>38</td>
+                            <td>23 Fev, 2024</td>
+                            <td>10:00</td>
+                            <td>Consulta de Rotina</td>
+                            <td><span class="status-badge-med confirmed">Confirmada</span></td>
+                            <td>
+                                <div class="action-buttons-med">
+                                    <button class="action-btn-med" title="Visualizar">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn-med" title="Cancelar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <div class="pagination-med">
+                    <div class="pagination-info-med">
+                        Mostrando <strong>1-8</strong> de <strong>127</strong> consultas
+                    </div>
+                    <div class="pagination-controls-med">
+                        <button class="page-btn-med" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="page-btn-med active">1</button>
+                        <button class="page-btn-med">2</button>
+                        <button class="page-btn-med">3</button>
+                        <button class="page-btn-med">...</button>
+                        <button class="page-btn-med">16</button>
+                        <button class="page-btn-med">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-med" id="toastMed">
+        <i class="fas fa-check-circle"></i>
+        <span>Ação realizada com sucesso!</span>
+    </div>
+
+    <script src="../assets/js/medico-script.js"></script>
+</body>
+</html>

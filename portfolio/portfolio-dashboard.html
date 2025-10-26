@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVision - Dashboard Corporativo</title>
+    <link rel="stylesheet" href="../assets/css/dashboard-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Demo Notice -->
+    <div class="demo-banner">
+        <p><i class="fas fa-chart-line"></i> Demo Dashboard - Portfólio R&C Dev</p>
+        <a href="../index.html" class="btn-back">
+            <i class="fas fa-times"></i> Fechar
+        </a>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-network"></i>
+                    <span>DataVision</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Relatórios</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Usuários</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    <span>Financeiro</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-box"></i>
+                    <span>Produtos</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="progress-card">
+                    <div class="progress-info">
+                        <span class="progress-label">Armazenamento</span>
+                        <span class="progress-value">68%</span>
+                    </div>
+                    <div class="circular-progress">
+                        <svg width="100" height="100">
+                            <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="progress-fill" style="--progress: 68"></circle>
+                        </svg>
+                        <div class="progress-text">68%</div>
+                    </div>
+                    <p class="progress-description">34 GB de 50 GB usados</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar relatórios, usuários, métricas...">
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="topbar-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">8</span>
+                    </button>
+                    <button class="topbar-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="topbar-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Ana Silva</span>
+                            <span class="user-role">Administrador</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card blue" data-aos="fade-up" data-aos-delay="100">
+                        <div class="kpi-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="kpi-info">
+                            <span class="kpi-label">Receita Total</span>
+                            <h3 class="kpi-value">R$ 2.847.593</h3>
+                            <div class="kpi-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-sparkline" id="sparkline-1"></div>
+                    </div>
+
+                    <div class="kpi-card green" data-aos="fade-up" data-aos-delay="200">
+                        <div class="kpi-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="kpi-info">
+                            <span class="kpi-label">Novos Clientes</span>
+                            <h3 class="kpi-value">1.284</h3>
+                            <div class="kpi-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+8.3%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-sparkline" id="sparkline-2"></div>
+                    </div>
+
+                    <div class="kpi-card purple" data-aos="fade-up" data-aos-delay="300">
+                        <div class="kpi-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="kpi-info">
+                            <span class="kpi-label">Taxa de Conversão</span>
+                            <h3 class="kpi-value">24.6%</h3>
+                            <div class="kpi-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+3.2%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-sparkline" id="sparkline-3"></div>
+                    </div>
+
+                    <div class="kpi-card cyan" data-aos="fade-up" data-aos-delay="400">
+                        <div class="kpi-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="kpi-info">
+                            <span class="kpi-label">Pedidos Hoje</span>
+                            <h3 class="kpi-value">847</h3>
+                            <div class="kpi-trend negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-2.1%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-sparkline" id="sparkline-4"></div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <!-- Revenue Chart -->
+                    <div class="chart-card large" data-aos="fade-up" data-aos-delay="100">
+                        <div class="chart-header">
+                            <div>
+                                <h3>Receita Mensal</h3>
+                                <p>Últimos 12 meses</p>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="chart-btn active">Mês</button>
+                                <button class="chart-btn">Ano</button>
+                                <button class="chart-btn">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Performance Gauge -->
+                    <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="chart-header">
+                            <div>
+                                <h3>Performance Geral</h3>
+                                <p>Meta mensal</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="gaugeChart"></canvas>
+                        </div>
+                        <div class="gauge-info">
+                            <div class="gauge-stat">
+                                <span class="gauge-label">Atual</span>
+                                <span class="gauge-value">87%</span>
+                            </div>
+                            <div class="gauge-stat">
+                                <span class="gauge-label">Meta</span>
+                                <span class="gauge-value">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traffic Sources -->
+                    <div class="chart-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="chart-header">
+                            <div>
+                                <h3>Fontes de Tráfego</h3>
+                                <p>Distribuição de acessos</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                        <div class="traffic-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background: #00ffff"></span>
+                                <span>Direto</span>
+                                <strong>35%</strong>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background: #6545ff"></span>
+                                <span>Redes Sociais</span>
+                                <strong>28%</strong>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background: #4ae3b5"></span>
+                                <span>Orgânico</span>
+                                <strong>37%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales by Category -->
+                    <div class="chart-card large" data-aos="fade-up" data-aos-delay="400">
+                        <div class="chart-header">
+                            <div>
+                                <h3>Vendas por Categoria</h3>
+                                <p>Comparativo trimestral</p>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="chart-btn">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Tables & Progress -->
+                <div class="tables-grid">
+                    <!-- Recent Transactions -->
+                    <div class="data-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="data-header">
+                            <h3>Transações Recentes</h3>
+                            <a href="#" class="view-all">Ver Todas</a>
+                        </div>
+                        <div class="data-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Cliente</th>
+                                        <th>Produto</th>
+                                        <th>Valor</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#8482</td>
+                                        <td>Roberto Ferreira</td>
+                                        <td>MacBook Pro M3</td>
+                                        <td>R$ 18.999,00</td>
+                                        <td><span class="status-badge success">Aprovado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8481</td>
+                                        <td>Juliana Mendes</td>
+                                        <td>iPhone 15 Pro Max</td>
+                                        <td>R$ 9.899,00</td>
+                                        <td><span class="status-badge success">Aprovado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8480</td>
+                                        <td>Fernanda Alves</td>
+                                        <td>Smart TV 65" OLED</td>
+                                        <td>R$ 5.499,00</td>
+                                        <td><span class="status-badge pending">Pendente</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8479</td>
+                                        <td>Marcos Ribeiro</td>
+                                        <td>PlayStation 5 Pro</td>
+                                        <td>R$ 4.299,00</td>
+                                        <td><span class="status-badge success">Aprovado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8478</td>
+                                        <td>Carla Souza</td>
+                                        <td>Notebook Gamer RTX</td>
+                                        <td>R$ 7.899,00</td>
+                                        <td><span class="status-badge success">Aprovado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8477</td>
+                                        <td>Lucas Martins</td>
+                                        <td>AirPods Pro 2</td>
+                                        <td>R$ 2.499,00</td>
+                                        <td><span class="status-badge pending">Pendente</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8476</td>
+                                        <td>Beatriz Lima</td>
+                                        <td>iPad Pro 12.9"</td>
+                                        <td>R$ 11.499,00</td>
+                                        <td><span class="status-badge failed">Recusado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#8475</td>
+                                        <td>Gabriel Costa</td>
+                                        <td>Apple Watch Ultra 2</td>
+                                        <td>R$ 8.299,00</td>
+                                        <td><span class="status-badge success">Aprovado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Goals Progress -->
+                    <div class="data-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="data-header">
+                            <h3>Metas do Mês</h3>
+                            <span class="goals-date">Outubro 2025</span>
+                        </div>
+                        <div class="goals-list">
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span class="goal-name">Vendas Mensais</span>
+                                    <span class="goal-value">R$ 285k / R$ 300k</span>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 95%"></div>
+                                    </div>
+                                    <span class="goal-percent">95%</span>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span class="goal-name">Novos Cadastros</span>
+                                    <span class="goal-value">1.284 / 1.500</span>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill green" style="width: 86%"></div>
+                                    </div>
+                                    <span class="goal-percent">86%</span>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span class="goal-name">Taxa de Retenção</span>
+                                    <span class="goal-value">87% / 90%</span>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill purple" style="width: 97%"></div>
+                                    </div>
+                                    <span class="goal-percent">97%</span>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span class="goal-name">Satisfação do Cliente</span>
+                                    <span class="goal-value">4.8 / 5.0</span>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill cyan" style="width: 96%"></div>
+                                    </div>
+                                    <span class="goal-percent">96%</span>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span class="goal-name">Produtos Vendidos</span>
+                                    <span class="goal-value">3.842 / 4.000</span>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill orange" style="width: 96%"></div>
+                                    </div>
+                                    <span class="goal-percent">96%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Products -->
+                <div class="products-section" data-aos="fade-up">
+                    <div class="section-header-dash">
+                        <h3>Produtos Mais Vendidos</h3>
+                        <p>Top 8 produtos da semana</p>
+                    </div>
+                    <div class="products-grid-dash">
+                        <div class="product-card-dash">
+                            <div class="product-rank">1</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>MacBook Pro M3</h4>
+                                <p>Notebook Apple</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">284 vendidos</span>
+                                    <span class="product-price-dash">R$ 18.999</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">2</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>iPhone 15 Pro Max</h4>
+                                <p>Smartphone Premium</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">267 vendidos</span>
+                                    <span class="product-price-dash">R$ 9.899</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 89%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">3</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>Smart TV 65" OLED</h4>
+                                <p>Televisão 4K</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">198 vendidos</span>
+                                    <span class="product-price-dash">R$ 5.499</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 66%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">4</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>PlayStation 5 Pro</h4>
+                                <p>Console Gaming</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">176 vendidos</span>
+                                    <span class="product-price-dash">R$ 4.299</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 59%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">5</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>AirPods Pro 2</h4>
+                                <p>Fones Bluetooth</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">152 vendidos</span>
+                                    <span class="product-price-dash">R$ 2.499</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 51%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">6</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>iPad Pro 12.9"</h4>
+                                <p>Tablet Profissional</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">143 vendidos</span>
+                                    <span class="product-price-dash">R$ 11.499</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 48%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">7</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>Canon EOS R5</h4>
+                                <p>Câmera Profissional</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">128 vendidos</span>
+                                    <span class="product-price-dash">R$ 24.999</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 43%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-dash">
+                            <div class="product-rank">8</div>
+                            <div class="product-image-dash">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="product-details-dash">
+                                <h4>Apple Watch Ultra 2</h4>
+                                <p>Smartwatch Premium</p>
+                                <div class="product-stats-dash">
+                                    <span class="product-sold">119 vendidos</span>
+                                    <span class="product-price-dash">R$ 8.299</span>
+                                </div>
+                                <div class="product-progress-dash">
+                                    <div class="progress-bar-dash" style="--width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Stats -->
+                <div class="footer-stats" data-aos="fade-up">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="stat-label">Total de Usuários</span>
+                            <span class="stat-value">12.847</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <span class="stat-label">Receita Anual</span>
+                            <span class="stat-value">R$ 28,4M</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <span class="stat-label">Crescimento</span>
+                            <span class="stat-value">+32.8%</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <span class="stat-label">Avaliação Média</span>
+                            <span class="stat-value">4.9/5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles-bg"></div>
+
+    <script src="../assets/js/dashboard-script.js"></script>
+</body>
+</html>
