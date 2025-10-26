@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://renangcv.github.io/SiteVendas/images/coverRC.png</image:loc>
+      <image:title>R&C Dev - Desenvolvimento Web</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Portfolio E-commerce -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-ecommerce.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio Delivery -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-delivery.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio Dashboard -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-dashboard.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio Restaurante -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-restaurant.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio EAD -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-ead.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio Médico -->
+  <url>
+    <loc>https://renangcv.github.io/SiteVendas/portfolio/portfolio-medico.html</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>

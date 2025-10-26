@@ -1,0 +1,19 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /docs/
+
+# Sitemaps
+Sitemap: https://renangcv.github.io/SiteVendas/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 10

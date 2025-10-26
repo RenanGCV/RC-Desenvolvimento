@@ -1,0 +1,22 @@
+{
+  "name": "R&C Dev - Desenvolvimento Web Premium",
+  "short_name": "R&C Dev",
+  "description": "Especialistas em desenvolvimento web profissional. Sites, sistemas e apps personalizados.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/ico.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "scope": "/"
+}

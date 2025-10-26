@@ -1,15 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Renan e Cássio - Desenvolvimento Web Profissional | Sites, Sistemas e Apps Personalizados">
-    <title>Renan & Cássio - Desenvolvimento Web Premium</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>R&C Dev | Desenvolvimento Web Profissional - Sites, Sistemas e Apps Personalizados</title>
+    <meta name="description" content="R&C Dev: Especialistas em desenvolvimento web profissional. Criamos sites responsivos, sistemas personalizados e aplicativos sob medida. Transforme sua ideia em realidade digital com tecnologia de ponta. Orçamento grátis!">
+    <meta name="keywords" content="desenvolvimento web, criação de sites, desenvolvimento de sistemas, aplicativos web, site responsivo, programação web, desenvolvedor web, agência digital, site profissional, ecommerce, landing page, dashboard, sistema médico, plataforma ead, desenvolvimento frontend, desenvolvimento backend, Rio de Janeiro">
+    <meta name="author" content="R&C Dev - Renan & Cássio">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="BR-RJ">
+    <meta name="geo.placename" content="Rio de Janeiro">
+    <meta name="geo.position" content="-22.9068;-43.1729">
+    <meta name="ICBM" content="-22.9068, -43.1729">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://renangcv.github.io/SiteVendas/">
+    <meta property="og:site_name" content="R&C Dev">
+    <meta property="og:title" content="R&C Dev - Desenvolvimento Web Premium | Sites e Sistemas Profissionais">
+    <meta property="og:description" content="Especialistas em desenvolvimento web. Criamos sites responsivos, sistemas personalizados e aplicativos sob medida. Tecnologia de ponta, design moderno e resultados garantidos. Solicite seu orçamento grátis!">
+    <meta property="og:image" content="https://renangcv.github.io/SiteVendas/images/coverRC.png">
+    <meta property="og:image:secure_url" content="https://renangcv.github.io/SiteVendas/images/coverRC.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="R&C Dev - Desenvolvimento Web Profissional">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@rcdev">
+    <meta name="twitter:creator" content="@rcdev">
+    <meta name="twitter:url" content="https://renangcv.github.io/SiteVendas/">
+    <meta name="twitter:title" content="R&C Dev - Desenvolvimento Web Premium">
+    <meta name="twitter:description" content="Especialistas em desenvolvimento web. Sites responsivos, sistemas personalizados e apps sob medida. Orçamento grátis!">
+    <meta name="twitter:image" content="https://renangcv.github.io/SiteVendas/images/coverRC.png">
+    <meta name="twitter:image:alt" content="R&C Dev - Desenvolvimento Web Profissional">
+    
+    <!-- WhatsApp Meta Tags -->
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    
+    <!-- LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="R&C Dev - Desenvolvimento Web Premium">
+    <meta property="og:description" content="Especialistas em desenvolvimento web profissional. Sites, sistemas e apps personalizados.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://renangcv.github.io/SiteVendas/">
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="pt-br" href="https://renangcv.github.io/SiteVendas/">
+    <link rel="alternate" hreflang="x-default" href="https://renangcv.github.io/SiteVendas/">
+    
+    <!-- Favicon - Múltiplos Formatos -->
+    <link rel="icon" type="image/svg+xml" href="images/ico.svg">
+    <link rel="alternate icon" type="image/svg+xml" href="images/ico.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ico.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/ico.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/ico.svg">
+    
+    <!-- Web App Manifest (PWA) -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="R&C Dev">
+    
+    <!-- Preconnect para Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org JSON-LD para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "R&C Dev",
+      "alternateName": "Renan & Cássio Desenvolvimento Web",
+      "url": "https://renangcv.github.io/SiteVendas/",
+      "logo": "https://renangcv.github.io/SiteVendas/images/ico.svg",
+      "image": "https://renangcv.github.io/SiteVendas/images/coverRC.png",
+      "description": "Especialistas em desenvolvimento web profissional. Criamos sites responsivos, sistemas personalizados e aplicativos sob medida.",
+      "telephone": "+55-21-97266-1951",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-22.9068",
+        "longitude": "-43.1729"
+      },
+      "sameAs": [
+        "https://github.com/RenanGCV"
+      ],
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "BRL",
+        "lowPrice": "1000",
+        "highPrice": "50000",
+        "offerCount": "6"
+      }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://renangcv.github.io/SiteVendas/"
+      }]
+    }
+    </script>
+    
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "R&C Dev",
+      "url": "https://renangcv.github.io/SiteVendas/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://renangcv.github.io/SiteVendas/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Navegação -->

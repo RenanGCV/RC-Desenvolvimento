@@ -1,0 +1,9 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-label="R&amp;C">
+  <!-- fundo arredondado -->
+  <rect x="0" y="0" width="16" height="16" rx="3" ry="3" fill="#0C1022"></rect>
+  <!-- letra R (branca) -->
+  <text x="3.2" y="11.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-weight="700" font-size="9.6" fill="#FFFFFF">R</text>
+  <!-- letra C (roxa) levemente sobreposta -->
+  <text x="7.0" y="11.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-weight="700" font-size="9.6" fill="#7C5CFF">C</text>
+</svg>
