@@ -61,6 +61,160 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    padding-top: 120px; /* Espaço para banner + navbar */
+}
+
+/* ===== BANNER BLACK FRIDAY ===== */
+.black-friday-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff0844 100%);
+    padding: 1rem 0;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+
+.banner-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fire-emoji {
+    font-size: 2.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.banner-text h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-text p {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.banner-countdown {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    min-width: 60px;
+}
+
+.time-unit span {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    font-family: 'Courier New', monospace;
+}
+
+.time-unit label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.time-separator {
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.banner-close {
+    position: absolute;
+    top: -0.5rem;
+    right: -1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.banner-close:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 .container {
@@ -105,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== NAVEGAÇÃO ===== */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 60px; /* Abaixo do banner */
     left: 0;
     right: 0;
     background: rgba(15, 15, 35, 0.95);
@@ -113,6 +267,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    transition: top 0.3s ease;
 }
 
 .navbar .container {
@@ -899,6 +1054,35 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.price-original {
+    font-size: 1rem;
+    color: var(--gray-text);
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+.price-discount {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #10b981;
+    position: relative;
+    animation: priceGlow 2s ease-in-out infinite;
+}
+
+@keyframes priceGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    }
 }
 
 .price-period {
@@ -1661,5 +1845,150 @@ h1, h2, h3, h4, h5, h6 {
     .btn-plan {
         font-size: 0.9rem;
         padding: 0.9rem 1.2rem;
+    }
+}
+
+/* ===== RESPONSIVIDADE BANNER BLACK FRIDAY ===== */
+@media (max-width: 968px) {
+    body {
+        padding-top: 140px;
+    }
+    
+    .navbar {
+        top: 80px;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .banner-left {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .fire-emoji {
+        font-size: 2rem;
+    }
+    
+    .banner-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .banner-text p {
+        font-size: 0.9rem;
+    }
+    
+    .banner-countdown {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+    
+    .time-unit {
+        min-width: 50px;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .time-unit span {
+        font-size: 1.5rem;
+    }
+    
+    .time-unit label {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 160px;
+    }
+    
+    .navbar {
+        top: 100px;
+    }
+    
+    .black-friday-banner {
+        padding: 0.8rem 0;
+    }
+    
+    .banner-text h3 {
+        font-size: 1rem;
+    }
+    
+    .banner-text p {
+        font-size: 0.8rem;
+    }
+    
+    .fire-emoji {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-timer {
+        gap: 0.3rem;
+    }
+    
+    .time-unit {
+        min-width: 40px;
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .time-unit span {
+        font-size: 1.2rem;
+    }
+    
+    .time-unit label {
+        font-size: 0.55rem;
+    }
+    
+    .time-separator {
+        font-size: 1.2rem;
+    }
+    
+    .banner-close {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+    
+    /* Ajustar preços com desconto no mobile */
+    .price-original {
+        font-size: 0.85rem;
+    }
+    
+    .price-discount {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        padding-top: 180px;
+    }
+    
+    .navbar {
+        top: 120px;
+    }
+    
+    .time-unit {
+        min-width: 35px;
+        padding: 0.25rem 0.4rem;
+    }
+    
+    .time-unit span {
+        font-size: 1rem;
+    }
+    
+    .time-unit label {
+        font-size: 0.5rem;
+    }
+    
+    .price-discount {
+        font-size: 1.2rem;
     }
 }

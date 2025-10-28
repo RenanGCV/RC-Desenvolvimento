@@ -164,6 +164,48 @@
     </script>
 </head>
 <body>
+    <!-- Banner Black Friday -->
+    <div id="blackFridayBanner" class="black-friday-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-left">
+                    <div class="fire-emoji">🔥</div>
+                    <div class="banner-text">
+                        <h3>ESQUENTA BLACK FRIDAY</h3>
+                        <p>10% OFF em todos os planos!</p>
+                    </div>
+                </div>
+                <div class="banner-countdown">
+                    <div class="countdown-label">Termina em:</div>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span id="days">00</span>
+                            <label>Dias</label>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <span id="hours">00</span>
+                            <label>Horas</label>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <span id="minutes">00</span>
+                            <label>Min</label>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <span id="seconds">00</span>
+                            <label>Seg</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="banner-close" onclick="closeBanner()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navegação -->
     <nav class="navbar">
         <div class="container">
@@ -419,12 +461,18 @@
                     <div class="plan-pricing">
                         <div class="price-item">
                             <span class="price-label">Adesão</span>
-                            <span class="price-value">R$ 400</span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 420</span>
+                                <span class="price-discount">R$ 379,99</span>
+                            </span>
                         </div>
                         <div class="price-divider"></div>
                         <div class="price-item">
                             <span class="price-label">Mensalidade</span>
-                            <span class="price-value">R$ 79<span class="price-period">/mês</span></span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 83</span>
+                                <span class="price-discount">R$ 74,99<span class="price-period">/mês</span></span>
+                            </span>
                         </div>
                     </div>
                     <ul class="plan-features">
@@ -452,12 +500,18 @@
                     <div class="plan-pricing">
                         <div class="price-item">
                             <span class="price-label">Adesão</span>
-                            <span class="price-value">R$ 550</span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 578</span>
+                                <span class="price-discount">R$ 519,99</span>
+                            </span>
                         </div>
                         <div class="price-divider"></div>
                         <div class="price-item">
                             <span class="price-label">Mensalidade</span>
-                            <span class="price-value">R$ 99<span class="price-period">/mês</span></span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 104</span>
+                                <span class="price-discount">R$ 93,99<span class="price-period">/mês</span></span>
+                            </span>
                         </div>
                     </div>
                     <ul class="plan-features">
@@ -485,12 +539,18 @@
                     <div class="plan-pricing">
                         <div class="price-item">
                             <span class="price-label">Adesão</span>
-                            <span class="price-value">R$ 950</span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 998</span>
+                                <span class="price-discount">R$ 897,99</span>
+                            </span>
                         </div>
                         <div class="price-divider"></div>
                         <div class="price-item">
                             <span class="price-label">Mensalidade</span>
-                            <span class="price-value">R$ 149<span class="price-period">/mês</span></span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 156</span>
+                                <span class="price-discount">R$ 139,99<span class="price-period">/mês</span></span>
+                            </span>
                         </div>
                     </div>
                     <ul class="plan-features">
@@ -519,12 +579,18 @@
                     <div class="plan-pricing">
                         <div class="price-item">
                             <span class="price-label">Adesão</span>
-                            <span class="price-value">R$ 1.900</span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 1.995</span>
+                                <span class="price-discount">R$ 1.799,99</span>
+                            </span>
                         </div>
                         <div class="price-divider"></div>
                         <div class="price-item">
                             <span class="price-label">Mensalidade</span>
-                            <span class="price-value">R$ 249<span class="price-period">/mês</span></span>
+                            <span class="price-value">
+                                <span class="price-original">R$ 261</span>
+                                <span class="price-discount">R$ 234,99<span class="price-period">/mês</span></span>
+                            </span>
                         </div>
                     </div>
                     <ul class="plan-features">
@@ -851,5 +917,54 @@
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
+    
+    <!-- Script Countdown Black Friday -->
+    <script>
+        // Countdown Timer - Black Friday (20 Nov 2025)
+        function updateCountdown() {
+            const endDate = new Date('2025-11-20T23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            if (distance < 0) {
+                // Promoção encerrada - esconder banner
+                document.getElementById('blackFridayBanner').style.display = 'none';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Atualizar a cada segundo
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Fechar banner
+        function closeBanner() {
+            const banner = document.getElementById('blackFridayBanner');
+            banner.style.animation = 'slideUp 0.3s ease-out';
+            setTimeout(() => {
+                banner.style.display = 'none';
+                // Salvar no localStorage para não mostrar novamente nesta sessão
+                localStorage.setItem('blackFridayBannerClosed', 'true');
+            }, 300);
+        }
+
+        // Verificar se usuário já fechou o banner
+        window.addEventListener('load', () => {
+            const bannerClosed = localStorage.getItem('blackFridayBannerClosed');
+            if (bannerClosed === 'true') {
+                document.getElementById('blackFridayBanner').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
