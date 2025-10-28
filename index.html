@@ -950,9 +950,14 @@
         // Fechar banner
         function closeBanner() {
             const banner = document.getElementById('blackFridayBanner');
+            const navbar = document.querySelector('.navbar');
             banner.style.animation = 'slideUp 0.3s ease-out';
             setTimeout(() => {
                 banner.style.display = 'none';
+                // Ajustar padding do body para remover o gap
+                document.body.style.paddingTop = '80px'; // Apenas altura da navbar
+                // Mover navbar para o topo
+                navbar.style.top = '0';
                 // Salvar no localStorage para não mostrar novamente nesta sessão
                 localStorage.setItem('blackFridayBannerClosed', 'true');
             }, 300);
@@ -962,7 +967,13 @@
         window.addEventListener('load', () => {
             const bannerClosed = localStorage.getItem('blackFridayBannerClosed');
             if (bannerClosed === 'true') {
-                document.getElementById('blackFridayBanner').style.display = 'none';
+                const banner = document.getElementById('blackFridayBanner');
+                const navbar = document.querySelector('.navbar');
+                banner.style.display = 'none';
+                // Ajustar padding do body para remover o gap
+                document.body.style.paddingTop = '80px'; // Apenas altura da navbar
+                // Mover navbar para o topo
+                navbar.style.top = '0';
             }
         });
     </script>
