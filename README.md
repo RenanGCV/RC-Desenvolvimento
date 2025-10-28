@@ -130,7 +130,6 @@ Website de restaurante gourmet com design escuro e sofisticado.
 - Google Fonts (Playfair Display, Poppins)
 - Font Awesome
 
-**Documentação:** `docs/RESTAURANT-README.md`
 
 ---
 
@@ -162,7 +161,6 @@ Plataforma de cursos online moderna com design colorido e intuitivo.
 - SVG para ícones e gráficos
 - Google Fonts (Poppins, Inter, Nunito Sans)
 
-**Documentação:** `docs/EAD-README.md`, `docs/EAD-CUSTOMIZATION.md`
 
 ---
 
@@ -196,7 +194,6 @@ Sistema de gestão médica profissional para clínicas e hospitais.
 - Google Fonts (Poppins, Inter, Nunito Sans)
 - Font Awesome
 
-**Documentação:** `docs/MEDICO-README.md`
 
 ---
 
@@ -333,7 +330,6 @@ Total de Arquivos: 21
 Total de Linhas de Código: ~11.180 linhas
 
 Projetos Completos: 6
-Documentações: 5 arquivos .md
 ```
 
 ---
