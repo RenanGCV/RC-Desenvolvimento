@@ -958,24 +958,8 @@
                 document.body.style.paddingTop = '80px'; // Apenas altura da navbar
                 // Mover navbar para o topo
                 navbar.style.top = '0';
-                // Salvar no localStorage para não mostrar novamente nesta sessão
-                localStorage.setItem('blackFridayBannerClosed', 'true');
             }, 300);
         }
-
-        // Verificar se usuário já fechou o banner
-        window.addEventListener('load', () => {
-            const bannerClosed = localStorage.getItem('blackFridayBannerClosed');
-            if (bannerClosed === 'true') {
-                const banner = document.getElementById('blackFridayBanner');
-                const navbar = document.querySelector('.navbar');
-                banner.style.display = 'none';
-                // Ajustar padding do body para remover o gap
-                document.body.style.paddingTop = '80px'; // Apenas altura da navbar
-                // Mover navbar para o topo
-                navbar.style.top = '0';
-            }
-        });
     </script>
 </body>
 </html>

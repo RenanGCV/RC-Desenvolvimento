@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== NAVEGAÇÃO ===== */
 .navbar {
     position: fixed;
-    top: 60px; /* Abaixo do banner */
+    top: 75px; /* Abaixo do banner - ajustado para evitar sobreposição */
     left: 0;
     right: 0;
     background: rgba(15, 15, 35, 0.95);
